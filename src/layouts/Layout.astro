@@ -1,0 +1,36 @@
+---
+interface Props {
+	title: string;
+}
+
+import '../styles/global.css';
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Portafolio de Software Developer" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-[#0a0a0a] text-white font-['Onest']">
+        <div class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+		<main class="max-w-6xl mx-auto px-4 py-10">
+            <slot />
+        </main>
+	</body>
+</html>
+
+<style is:global>
+	html {
+		font-family: 'Onest', system-ui, sans-serif;
+        scroll-behavior: smooth;
+	}
+</style>

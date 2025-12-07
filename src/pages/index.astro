@@ -1,16 +1,359 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { 
+    Github, Linkedin, Mail, Code2, 
+    GraduationCap, Award, Shapes, User, 
+    ExternalLink, MapPin, Download, ChevronRight,
+    Briefcase // <--- Importamos el ícono para experiencia
+} from 'lucide-react';
 
+const techStack = [
+    { name: "HTML", icon: "html" },
+    { name: "CSS", icon: "css" },
+    { name: "JavaScript", icon: "js" },
+    { name: "React", icon: "react" },
+    { name: "Astro", icon: "astro" },
+    { name: "Tailwind", icon: "tailwind" },
+    { name: "Git", icon: "git" },
+    { name: "GitHub", icon: "github" },
+    { name: "Python", icon: "python" },
+    { name: "MySQL", icon: "mysql" },
+    { name: "Bootstrap", icon: "bootstrap" },
+    { name: "Vercel", icon: "vercel" },
+     {name: "Node", icon: "nodejs" },
+     { name: "Express", icon: "express" }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Johan Lucumi | Full-Stack Developer">
+  
+  <div class="fixed inset-0 -z-10 h-full w-full bg-[#050505] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]">
+      <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-yellow-400 opacity-20 blur-[100px]"></div>
+      <div class="absolute right-0 bottom-0 -z-10 h-[310px] w-[310px] rounded-full bg-blue-500 opacity-10 blur-[100px]"></div>
+  </div>
+
+  <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] md:w-auto">
+    <div class="flex items-center gap-6 px-6 py-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-full shadow-2xl overflow-x-auto">
+        <a href="#inicio" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Inicio</a>
+        <a href="#sobre-mi" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Perfil</a>
+        <a href="#proyectos" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Proyectos</a>
+        <a href="#stack" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Stack</a>
+        <a href="#experiencia" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Experiencia</a>
+        <a href="#educacion" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Educación</a>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 pb-20 pt-32">
+    
+    <section id="inicio" class="min-h-[80vh] flex flex-col justify-center items-center text-center reveal relative">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/5 text-green-400 text-xs font-bold mb-8 uppercase tracking-wider animate-fade-in-up">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            Disponible para trabajar
+        </div>
+
+        <h1 class="text-5xl md:text-8xl font-black tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-600 animate-gradient-text pb-2">
+            Johan Esneider <br> Lucumi Palacios
+        </h1>
+        
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
+            <strong class="text-yellow-300 font-semibold">Full-Stack Developer.</strong> Apasionado por construir soluciones web de principio a fin. Aplico la lógica del servidor y la precisión del frontend para crear software robusto.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4 items-center">
+            <a href="https://www.linkedin.com/in/johanlucumi/" target="_blank" class="group px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-yellow-300 transition-all duration-300 flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(253,224,71,0.4)] hover:-translate-y-1">
+                <Linkedin size={20} /> LinkedIn
+                <ChevronRight size={16} class="group-hover:translate-x-1 transition-transform" />
+            </a>
+            
+            <a href="/cv-johan.pdf" download class="px-8 py-4 border border-white/10 bg-white/5 text-white rounded-full hover:bg-white/10 hover:border-white/30 transition flex items-center gap-2 backdrop-blur-sm">
+                <Download size={20} /> CV
+            </a>
+
+            <a href="https://github.com/iamjohitan" target="_blank" class="px-8 py-4 border border-white/10 bg-white/5 text-white rounded-full hover:bg-white/10 hover:border-white/30 transition flex items-center gap-2 backdrop-blur-sm">
+                <Github size={20} /> GitHub
+            </a>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-20 reveal">
+        <h2 class="text-4xl font-bold flex items-center gap-3 mb-12">
+            <User className="text-yellow-400" /> Sobre mí
+        </h2>
+        
+        <div class="relative bg-gradient-to-br from-[#111] to-[#0a0a0a] border border-white/10 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center shadow-2xl overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none"></div>
+
+            <div class="w-48 h-48 md:w-64 md:h-64 shrink-0 rounded-2xl overflow-hidden border-4 border-white/5 shadow-2xl animate-float">
+                <img 
+                    src="/IMG-20240203-WA0058.jpg" 
+                    alt="Foto de perfil" 
+                    class="w-full h-full object-cover scale-110 group-hover:scale-100 transition duration-700 filter grayscale hover:grayscale-0"
+                />
+            </div>
+
+            <div class="space-y-6 text-gray-300 leading-relaxed text-lg relative z-10">
+                <p>
+                    Me llamo <strong class="text-white">Johan Lucumi</strong>. La tecnología siempre ha sido mi motor, pero fue la programación la que me dio las herramientas para crear. Actualmente me formo como <strong class="text-white">Tecnólogo en Software</strong>, complementando mi educación con proyectos desafiantes que me obligan a pensar como un ingeniero experimentado.
+                </p>
+                <p>
+                    A través de desarrollos como <strong class="text-yellow-300">Tienda Miaow</strong> y <strong class="text-yellow-300">Aqua POS</strong>, he perfeccionado mis habilidades Full-Stack, aprendiendo que la verdadera maestría está en resolver problemas reales de forma eficiente.
+                </p>
+                <p>
+                    Mi objetivo es simple: crecer profesionalmente aportando soluciones. Busco un entorno donde pueda sumar mi energía y mis habilidades técnicas para construir <strong class="text-yellow-300">productos digitales de alto impacto</strong>.
+                </p>
+                <div class="flex flex-wrap gap-6 pt-4 border-t border-white/10">
+                    <div class="flex items-center gap-2 text-gray-400 text-sm bg-white/5 px-3 py-1 rounded-full">
+                        <MapPin size={16} class="text-red-400" /> Cali, Colombia
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-400 text-sm bg-white/5 px-3 py-1 rounded-full">
+                        <GraduationCap size={16} class="text-blue-400" /> Tec. Sistemas (En curso)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-20 reveal">
+        <h2 class="text-4xl font-bold flex items-center gap-3 mb-12">
+            <Code2 className="text-yellow-400" /> Proyectos 
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <article class="group relative rounded-2xl border border-white/10 bg-[#0f0f0f] overflow-hidden hover:border-yellow-400/30 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)] transition duration-500">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent z-10 opacity-80"></div>
+                    <img src="/Tienda_Miaow.png" alt="Tienda Miaow" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                </div>
+                
+                <div class="p-8 relative z-20 -mt-12">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-yellow-300 transition">Tienda Miaow</h3>
+                        <div class="flex gap-2 bg-black/50 backdrop-blur-md p-2 rounded-lg border border-white/10">
+                            <img src="https://skillicons.dev/icons?i=js,css,html,bootstrap,mysql" class="h-5" alt="Techs" />
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                        E-commerce Full-Stack simulado. Incluye gestión de inventario SQL, lógica de precios y un "PC Builder" interactivo. Demuestra capacidad de manejar flujo de datos complejo.
+                        <br/><br/>
+                        Desarrollé todo el proyecto como Full Stack Developer: creación de interfaces, lógica del frontend, diseño del backend y APIs, conexión con MySQL, manejo de datos, y despliegue completo en producción.
+                    </p>
+                    <a href="https://github.com/iamjohitan/TiendaMiaow" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 hover:text-yellow-300 transition">
+                        <Github size={16} /> Ver Código
+                    </a>
+                </div>
+            </article>
+
+            
+            <article class="group relative rounded-2xl border border-white/10 bg-[#0f0f0f] overflow-hidden hover:border-yellow-400/30 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)] transition duration-500">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent z-10 opacity-80"></div>
+                    <img src="/Aqua.png" alt="Aqua POS" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                </div>
+                
+                <div class="p-8 relative z-20 -mt-12">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-yellow-300 transition">Aqua POS</h3>
+                        <div class="flex gap-2 bg-black/50 backdrop-blur-md p-2 rounded-lg border border-white/10">
+                            <img src="https://skillicons.dev/icons?i=ts,react,tailwind,supabase,nestjs,nodejs" class="h-5" alt="Techs" />
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                       Sistema web para la gestión de pedidos en restaurante, con creación y administración de órdenes, manejo de mesas y proceso de pago. <br/> <br/>Mi aporte se centró en el diseño e implementación de las interfaces principales (login, órdenes y pago), creación de componentes reutilizables, diseño responsive, modo claro/oscuro e integración del frontend con las APIs del backend.
+                    </p>
+                    <a href="https://github.com/LilCharchar/Aqua" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 hover:text-yellow-300 transition">
+                        <Github size={16} /> Ver Código
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="stack" class="py-20 reveal overflow-hidden">
+        <h2 class="text-4xl font-bold flex items-center gap-3 mb-12">
+            <Shapes className="text-yellow-400" /> Tech Stack
+        </h2>
+
+        <div class="relative w-full overflow-hidden mask-linear-gradient">
+            <div class="flex gap-8 animate-infinite-scroll w-max">
+                {[...techStack, ...techStack].map((tech) => (
+                    <div class="flex flex-col items-center gap-3 group min-w-[80px]">
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/5 group-hover:border-yellow-400/50 group-hover:bg-white/10 transition duration-300">
+                            <img src={`https://skillicons.dev/icons?i=${tech.icon}`} class="w-12 h-12" alt={tech.name} />
+                        </div>
+                        <span class="text-xs text-gray-500 font-medium">{tech.name}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia" class="py-20 reveal">
+        <h2 class="text-4xl font-bold flex items-center gap-3 mb-12">
+            <Briefcase className="text-yellow-400" /> Experiencia
+        </h2>
+        
+        <div class="relative border-l-2 border-white/10 ml-3 space-y-12">
+            
+            <div class="relative pl-8 group">
+                <span class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-[#111] border-2 border-yellow-400 group-hover:scale-125 transition duration-300 shadow-[0_0_10px_rgba(250,204,21,0.5)]"></span>
+                
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h3 class="text-2xl font-bold text-white group-hover:text-yellow-300 transition">Desarrollador Full-Stack Freelance</h3>
+                    <span class="text-xs font-mono text-yellow-300/80 bg-yellow-400/10 px-2 py-1 rounded border border-yellow-400/20 mt-2 sm:mt-0 w-fit">2023 - Presente</span>
+                </div>
+                
+                <p class="text-gray-300 leading-relaxed mb-4 max-w-3xl">
+                    Desarrollo y despliegue de aplicaciones web a medida para proyectos académicos y personales de alto nivel. Especializado en la creación de soluciones integrales (End-to-End) que combinan rendimiento y diseño.
+                </p>
+                
+                <ul class="space-y-3 text-gray-400 text-sm list-none">
+                    <li class="flex items-start gap-2">
+                        <span class="text-yellow-400 mt-1">▹</span>
+                        <span>Arquitectura y desarrollo de plataformas E-commerce (Tienda Miaow) con gestión compleja de estado y bases de datos SQL.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-yellow-400 mt-1">▹</span>
+                        <span>Colaboración en sistemas de gestión (Aqua POS), liderando la implementación de interfaces responsivas y conexión con APIs RESTful.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-yellow-400 mt-1">▹</span>
+                        <span>Optimización de despliegues en plataformas cloud (Vercel) y gestión de control de versiones con Git/GitHub.</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="educacion" class="py-20 reveal">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <div>
+                <h2 class="text-3xl font-bold flex items-center gap-3 mb-10 border-b border-white/10 pb-4">
+                    <GraduationCap className="text-yellow-400" /> Educación
+                </h2>
+                <div class="border-l-2 border-white/10 ml-3 space-y-10">
+                    
+                    <div class="relative pl-8 group">
+                        <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#111] border-2 border-yellow-400 group-hover:scale-125 transition duration-300"></span>
+                        <h3 class="font-bold text-white text-lg">Tecnología de Software</h3>
+                        <p class="text-sm text-yellow-300/80 mb-2 font-mono">2024 - 2026</p>
+                        <p class="text-gray-400 text-sm">Universidad Santiago de Cali</p>
+                    </div>
+
+                    <div class="relative pl-8 group">
+                        <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#111] border-2 border-gray-600 group-hover:border-blue-400 transition duration-300"></span>
+                        <h3 class="font-bold text-white text-lg">Técnico en Programación</h3>
+                        <p class="text-sm text-blue-300/80 mb-2 font-mono">2023</p>
+                        <p class="text-gray-400 text-sm">SENA</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold flex items-center gap-3 mb-10 border-b border-white/10 pb-4">
+                    <Award className="text-yellow-400" /> Certificaciones
+                </h2>
+                <div class="space-y-4">
+                    <div class="p-5 rounded-xl bg-gradient-to-r from-white/5 to-transparent border border-white/5 flex justify-between items-center group hover:border-yellow-400/30 hover:bg-white/10 transition cursor-default">
+                        <div>
+                            <h4 class="font-bold text-white group-hover:text-yellow-300 transition">Bootcamp Desarrollo Web Full Stack</h4>
+                            <p class="text-xs text-gray-500 mt-1">TalentoTech / MINTIC</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-yellow-400/10 flex items-center justify-center group-hover:bg-yellow-400 group-hover:text-black transition duration-300">
+                             <Award size={20} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-white/10 bg-[#020202] py-8">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        
+        <p class="text-gray-600 text-sm text-center md:text-left">
+            © 2024 Johan Lucumi. Todos los derechos reservados.
+        </p>
+
+        <div class="flex gap-6">
+            <a href="https://www.linkedin.com/in/johanlucumi/" target="_blank" class="text-gray-400 hover:text-white hover:scale-110 transition">
+                <Linkedin size={20} />
+            </a>
+            <a href="https://github.com/iamjohitan" target="_blank" class="text-gray-400 hover:text-white hover:scale-110 transition">
+                <Github size={20} />
+            </a>
+            <a href="mailto:johanesneiderlucumip@gmail.com" class="text-gray-400 hover:text-white hover:scale-110 transition">
+                <Mail size={20} />
+            </a>
+        </div>
+
+    </div>
+  </footer>
+
+</Layout>
+
+<style>
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Animación Infinita para el Stack */
+    @keyframes infinite-scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+    .animate-infinite-scroll {
+        animation: infinite-scroll 25s linear infinite;
+    }
+    .mask-linear-gradient {
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    /* Animación de Flotar para la foto */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    /* Texto Gradiente */
+    @keyframes gradient-text {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    .animate-gradient-text {
+        background-size: 200% auto;
+        animation: gradient-text 5s ease infinite;
+    }
+</style>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
