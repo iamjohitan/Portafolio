@@ -1,36 +1,51 @@
 ---
 interface Props {
 	title: string;
+    description?: string;
 }
 
 import '../styles/global.css';
 
-const { title } = Astro.props;
+const { 
+    title, 
+    description = "Portafolio de Johan Lucumi - Desarrollador Full Stack en Cali, Colombia. Especialista en crear soluciones web modernas con React, Astro y Node.js." 
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Portafolio de Software Developer" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/icon.png" />
+        
+        <meta name="description" content={description} />
+        <meta name="author" content="Johan Esneider Lucumi Palacios" />
+        <meta name="keywords" content="Johan Lucumi, Desarrollador Web, Full Stack, Frontend, Cali, Colombia, Astro, React, Node.js, Portafolio" />
+        
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/og-image.jpg" /> 
+
+        <link rel="icon" type="image/svg+xml" href="/icon.png" />
 		<title>{title}</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 	</head>
+    
 	<body class="bg-[#0a0a0a] text-white font-['Onest']">
         <div class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
-		<main class="max-w-6xl mx-auto px-4 py-10">
-            <slot />
-        </main>
+		
+        <main class="max-w-6xl mx-auto px-4 py-10">
+			<slot />
+		</main>
 	</body>
 </html>
 
 <style is:global>
 	html {
 		font-family: 'Onest', system-ui, sans-serif;
-        scroll-behavior: smooth;
+		scroll-behavior: smooth;
 	}
 </style>
