@@ -4,7 +4,7 @@ import {
     Github, Linkedin, Mail, Code2, 
     GraduationCap, Award, Shapes, User, 
     ExternalLink, MapPin, Download, ChevronRight,
-    Briefcase
+    Briefcase, Languages
 } from 'lucide-react';
 
 const techStack = [
@@ -26,6 +26,81 @@ const techStack = [
     { name: "Postman", icon: "postman" },
     { name: "Supabase", icon: "supabase" }
 ];
+
+const translations = {
+    es: {
+        nav: { home: "Inicio", profile: "Perfil", projects: "Proyectos", stack: "Stack", education: "Educación" },
+        hero: {
+            available: "Disponible para trabajar",
+            title: "Full-Stack Developer.",
+            description: "Capaz de navegar todo el ciclo de desarrollo, desde la arquitectura de base de datos hasta la interfaz de usuario, creando software que funciona tan bien como se ve."
+        },
+        about: {
+            title: "Sobre mí",
+            p1: "Me llamo <strong class=\"text-white\">Johan</strong>. La tecnología siempre ha sido mi motor, pero fue la programación la que me dio las herramientas para crear. Actualmente me formo como <strong class=\"text-white\">Tecnólogo de Software</strong>, complementando mi educación con proyectos desafiantes que <strong class=\"text-yellow-300\">ponen a prueba mi lógica y mi capacidad para encontrar soluciones eficientes</strong>.",
+            p2: "A lo largo de mi trayectoria he perfeccionado mis habilidades técnicas, aprendiendo que la verdadera maestría no está solo en escribir código, sino en <strong class=\"text-yellow-300\">resolver problemas reales</strong> de forma eficiente, escalable y centrada en el usuario.",
+            p3: "Mi objetivo es crecer profesionalmente aportando soluciones. Busco un entorno donde pueda sumar mi energía y mis habilidades técnicas para construir <strong class=\"text-yellow-300\">productos digitales de alto impacto</strong>.",
+            location: "Cali, Colombia",
+            degree: "Tec. Sistemas (En curso)"
+        },
+        projects: {
+            title: "Proyectos",
+            miaow: {
+                description: "E-commerce Full-Stack simulado. Incluye gestión de inventario SQL, lógica de precios y un \"PC Builder\" interactivo. Demuestra capacidad de manejar flujo de datos complejo.",
+                role: "Desarrollé todo el proyecto como Full Stack Developer: creación de interfaces, lógica del frontend, diseño del backend y APIs, conexión con MySQL, manejo de datos, y despliegue completo en producción."
+            },
+            aqua: {
+                description: "Sistema web para la gestión de pedidos en restaurante, con creación y administración de órdenes, manejo de mesas y proceso de pago.",
+                role: "Mi aporte se centró en el diseño e implementación de las interfaces principales (login, órdenes y pago), creación de componentes reutilizables, diseño responsive, modo claro/oscuro e integración del frontend con las APIs del backend."
+            },
+            viewCode: "Ver Código"
+        },
+        education: {
+            title: "Educación",
+            softwareTech: "Tecnología de Software",
+            programming: "Técnico en Programación",
+            certifications: "Certificaciones",
+            bootcamp: "Bootcamp Desarrollo Web Full Stack"
+        },
+        footer: { rights: "Todos los derechos reservados." }
+    },
+    en: {
+        nav: { home: "Home", profile: "Profile", projects: "Projects", stack: "Stack", education: "Education" },
+        hero: {
+            available: "Available for work",
+            title: "Full-Stack Developer.",
+            description: "Capable of navigating the entire development cycle, from database architecture to user interface, creating software that works as well as it looks."
+        },
+        about: {
+            title: "About me",
+            p1: "My name is <strong class=\"text-white\">Johan</strong>. Technology has always been my driving force, but it was programming that gave me the tools to create. I am currently training as a <strong class=\"text-white\">Software Technologist</strong>, complementing my education with challenging projects that <strong class=\"text-yellow-300\">test my logic and my ability to find efficient solutions</strong>.",
+            p2: "Throughout my career I have perfected my technical skills, learning that true mastery is not only in writing code, but in <strong class=\"text-yellow-300\">solving real problems</strong> efficiently, scalably and user-centered.",
+            p3: "My goal is to grow professionally by providing solutions. I'm looking for an environment where I can add my energy and technical skills to build <strong class=\"text-yellow-300\">high-impact digital products</strong>.",
+            location: "Cali, Colombia",
+            degree: "Systems Tech (In progress)"
+        },
+        projects: {
+            title: "Projects",
+            miaow: {
+                description: "Simulated Full-Stack e-commerce. Includes SQL inventory management, pricing logic, and an interactive \"PC Builder\". Demonstrates ability to handle complex data flow.",
+                role: "I developed the entire project as Full Stack Developer: interface creation, frontend logic, backend and API design, MySQL connection, data handling, and complete production deployment."
+            },
+            aqua: {
+                description: "Web system for restaurant order management, with order creation and administration, table handling and payment process.",
+                role: "My contribution focused on the design and implementation of the main interfaces (login, orders and payment), creation of reusable components, responsive design, light/dark mode and frontend integration with backend APIs."
+            },
+            viewCode: "View Code"
+        },
+        education: {
+            title: "Education",
+            softwareTech: "Software Technology",
+            programming: "Programming Technician",
+            certifications: "Certifications",
+            bootcamp: "Full Stack Web Development Bootcamp"
+        },
+        footer: { rights: "All rights reserved." }
+    }
+};
 ---
 
 <Layout title="Johan Lucumi | Full-Stack Developer">
@@ -37,13 +112,21 @@ const techStack = [
 
   <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] md:w-auto">
     <div class="flex items-center gap-6 px-6 py-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-full shadow-2xl overflow-x-auto">
-        <a href="#inicio" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Inicio</a>
-        <a href="#sobre-mi" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Perfil</a>
-        <a href="#proyectos" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Proyectos</a>
-        <a href="#stack" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Stack</a>
-    <a href="#educacion" class="text-sm font-medium text-gray-300 hover:text-yellow-400 transition">Educación</a>
+        <a href="#inicio" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="#sobre-mi" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Perfil" data-en="Profile">Perfil</a>
+        <a href="#proyectos" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Proyectos" data-en="Projects">Proyectos</a>
+        <a href="#stack" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Stack" data-en="Stack">Stack</a>
+        <a href="#educacion" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Educación" data-en="Education">Educación</a>
+        <button id="langToggle" class="hidden md:flex items-center gap-1 text-sm font-medium text-yellow-400 hover:text-yellow-300 transition border-l border-white/10 pl-6">
+            <Languages size={16} /> <span id="langText">EN</span>
+        </button>
     </div>
   </nav>
+
+  <!-- Botón flotante de idioma para móvil -->
+  <button id="langToggleMobile" class="md:hidden fixed bottom-6 right-6 z-50 w-14 h-14 bg-yellow-400 hover:bg-yellow-300 text-black rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110">
+    <span id="langTextMobile" class="font-bold text-lg">EN</span>
+  </button>
 
   <main class="max-w-5xl mx-auto px-4 pb-20 pt-32">
     
@@ -54,7 +137,7 @@ const techStack = [
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
-            Disponible para trabajar
+            <span data-i18n="hero.available">Disponible para trabajar</span>
         </div>
 
         <h1 class="text-5xl md:text-8xl font-black tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-600 animate-gradient-text pb-2">
@@ -62,7 +145,7 @@ const techStack = [
         </h1>
         
         <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-            <strong class="text-yellow-300 font-semibold">Full-Stack Developer.</strong> Capaz de navegar todo el ciclo de desarrollo, desde la arquitectura de base de datos hasta la interfaz de usuario, creando software que funciona tan bien como se ve.
+            <strong class="text-yellow-300 font-semibold" data-i18n="hero.title">Full-Stack Developer.</strong> <span data-i18n="hero.description">Capaz de navegar todo el ciclo de desarrollo, desde la arquitectura de base de datos hasta la interfaz de usuario, creando software que funciona tan bien como se ve.</span>
         </p>
         <div class="flex flex-col md:flex-row gap-4 items-center">
             <a href="https://www.linkedin.com/in/johanlucumi/" target="_blank" class="group px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-yellow-300 transition-all duration-300 flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(253,224,71,0.4)] hover:-translate-y-1">
@@ -82,7 +165,7 @@ const techStack = [
 
     <section id="sobre-mi" class="py-20 reveal">
         <h2 class="text-4xl font-bold flex items-center gap-3 mb-12">
-            <User className="text-yellow-400" /> Sobre mí
+            <User className="text-yellow-400" /> <span data-i18n="about.title">Sobre mí</span>
         </h2>
         
         <div class="relative bg-gradient-to-br from-[#111] to-[#0a0a0a] border border-white/10 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center shadow-2xl overflow-hidden group">
@@ -97,21 +180,21 @@ const techStack = [
             </div>
 
             <div class="space-y-6 text-gray-300 leading-relaxed text-lg relative z-10">
-                <p>
+                <p data-i18n="about.p1" data-i18n-html>
                     Me llamo <strong class="text-white">Johan</strong>. La tecnología siempre ha sido mi motor, pero fue la programación la que me dio las herramientas para crear. Actualmente me formo como <strong class="text-white">Tecnólogo de Software</strong>, complementando mi educación con proyectos desafiantes que <strong class="text-yellow-300">ponen a prueba mi lógica y mi capacidad para encontrar soluciones eficientes</strong>.
                 </p>
-                <p> 
+                <p data-i18n="about.p2" data-i18n-html> 
                     A lo largo de mi trayectoria he perfeccionado mis habilidades técnicas, aprendiendo que la verdadera maestría no está solo en escribir código, sino en <strong class="text-yellow-300">resolver problemas reales</strong> de forma eficiente, escalable y centrada en el usuario.
                 </p>
-                <p>
+                <p data-i18n="about.p3" data-i18n-html>
                     Mi objetivo es crecer profesionalmente aportando soluciones. Busco un entorno donde pueda sumar mi energía y mis habilidades técnicas para construir <strong class="text-yellow-300">productos digitales de alto impacto</strong>.
                 </p>
                 <div class="flex flex-wrap gap-6 pt-4 border-t border-white/10">
                     <div class="flex items-center gap-2 text-gray-400 text-sm bg-white/5 px-3 py-1 rounded-full">
-                        <MapPin size={16} class="text-red-400" /> Cali, Colombia
+                        <MapPin size={16} class="text-red-400" /> <span data-i18n="about.location">Cali, Colombia</span>
                     </div>
                     <div class="flex items-center gap-2 text-gray-400 text-sm bg-white/5 px-3 py-1 rounded-full">
-                        <GraduationCap size={16} class="text-blue-400" /> Tec. Sistemas (En curso)
+                        <GraduationCap size={16} class="text-blue-400" /> <span data-i18n="about.degree">Tec. Sistemas (En curso)</span>
                     </div>
                 </div>
             </div>
@@ -120,7 +203,7 @@ const techStack = [
 
     <section id="proyectos" class="py-20 reveal">
         <h2 class="text-4xl font-bold flex items-center gap-3 mb-12">
-            <Code2 className="text-yellow-400" /> Proyectos 
+            <Code2 className="text-yellow-400" /> <span data-i18n="projects.title">Proyectos</span> 
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -139,12 +222,12 @@ const techStack = [
                         </div>
                     </div>
                     <p class="text-gray-400 mb-6 leading-relaxed text-sm">
-                        E-commerce Full-Stack simulado. Incluye gestión de inventario SQL, lógica de precios y un "PC Builder" interactivo. Demuestra capacidad de manejar flujo de datos complejo.
+                        <span data-i18n="projects.miaow.description">E-commerce Full-Stack simulado. Incluye gestión de inventario SQL, lógica de precios y un "PC Builder" interactivo. Demuestra capacidad de manejar flujo de datos complejo.</span>
                         <br/><br/>
-                        Desarrollé todo el proyecto como Full Stack Developer: creación de interfaces, lógica del frontend, diseño del backend y APIs, conexión con MySQL, manejo de datos, y despliegue completo en producción.
+                        <span data-i18n="projects.miaow.role">Desarrollé todo el proyecto como Full Stack Developer: creación de interfaces, lógica del frontend, diseño del backend y APIs, conexión con MySQL, manejo de datos, y despliegue completo en producción.</span>
                     </p>
                     <a href="https://github.com/iamjohitan/TiendaMiaow" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 hover:text-yellow-300 transition">
-                        <Github size={16} /> Ver Código
+                        <Github size={16} /> <span data-i18n="projects.viewCode">Ver Código</span>
                     </a>
                 </div>
             </article>
@@ -164,10 +247,10 @@ const techStack = [
                         </div>
                     </div>
                     <p class="text-gray-400 mb-6 leading-relaxed text-sm">
-                       Sistema web para la gestión de pedidos en restaurante, con creación y administración de órdenes, manejo de mesas y proceso de pago. <br/> <br/>Mi aporte se centró en el diseño e implementación de las interfaces principales (login, órdenes y pago), creación de componentes reutilizables, diseño responsive, modo claro/oscuro e integración del frontend con las APIs del backend.
+                       <span data-i18n="projects.aqua.description">Sistema web para la gestión de pedidos en restaurante, con creación y administración de órdenes, manejo de mesas y proceso de pago.</span> <br/> <br/><span data-i18n="projects.aqua.role">Mi aporte se centró en el diseño e implementación de las interfaces principales (login, órdenes y pago), creación de componentes reutilizables, diseño responsive, modo claro/oscuro e integración del frontend con las APIs del backend.</span>
                     </p>
                     <a href="https://github.com/LilCharchar/Aqua" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 hover:text-yellow-300 transition">
-                        <Github size={16} /> Ver Código
+                        <Github size={16} /> <span data-i18n="projects.viewCode">Ver Código</span>
                     </a>
                 </div>
             </article>
@@ -199,20 +282,20 @@ const techStack = [
             
             <div>
                 <h2 class="text-3xl font-bold flex items-center gap-3 mb-10 border-b border-white/10 pb-4">
-                    <GraduationCap className="text-yellow-400" /> Educación
+                    <GraduationCap className="text-yellow-400" /> <span data-i18n="education.title">Educación</span>
                 </h2>
                 <div class="border-l-2 border-white/10 ml-3 space-y-10">
                     
                     <div class="relative pl-8 group">
                         <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#111] border-2 border-yellow-400 group-hover:scale-125 transition duration-300"></span>
-                        <h3 class="font-bold text-white text-lg">Tecnología de Software</h3>
+                        <h3 class="font-bold text-white text-lg" data-i18n="education.softwareTech">Tecnología de Software</h3>
                         <p class="text-sm text-yellow-300/80 mb-2 font-mono">2024 - 2026</p>
                         <p class="text-gray-400 text-sm">Universidad Santiago de Cali</p>
                     </div>
 
                     <div class="relative pl-8 group">
                         <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#111] border-2 border-gray-600 group-hover:border-blue-400 transition duration-300"></span>
-                        <h3 class="font-bold text-white text-lg">Técnico en Programación</h3>
+                        <h3 class="font-bold text-white text-lg" data-i18n="education.programming">Técnico en Programación</h3>
                         <p class="text-sm text-blue-300/80 mb-2 font-mono">2023</p>
                         <p class="text-gray-400 text-sm">SENA</p>
                     </div>
@@ -221,12 +304,12 @@ const techStack = [
 
             <div>
                 <h2 class="text-3xl font-bold flex items-center gap-3 mb-10 border-b border-white/10 pb-4">
-                    <Award className="text-yellow-400" /> Certificaciones
+                    <Award className="text-yellow-400" /> <span data-i18n="education.certifications">Certificaciones</span>
                 </h2>
                 <div class="space-y-4">
                     <div class="p-5 rounded-xl bg-gradient-to-r from-white/5 to-transparent border border-white/5 flex justify-between items-center group hover:border-yellow-400/30 hover:bg-white/10 transition cursor-default">
                         <div>
-                            <h4 class="font-bold text-white group-hover:text-yellow-300 transition">Bootcamp Desarrollo Web Full Stack</h4>
+                            <h4 class="font-bold text-white group-hover:text-yellow-300 transition" data-i18n="education.bootcamp">Bootcamp Desarrollo Web Full Stack</h4>
                             <p class="text-xs text-gray-500 mt-1">TalentoTech / MinTic</p>
                         </div>
                         <div class="w-10 h-10 rounded-full bg-yellow-400/10 flex items-center justify-center group-hover:bg-yellow-400 group-hover:text-black transition duration-300">
@@ -245,7 +328,7 @@ const techStack = [
     <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
         
         <p class="text-gray-600 text-sm text-center md:text-left">
-            © 2025 Johan Lucumi. Todos los derechos reservados.
+            © 2025 Johan Lucumi. <span data-i18n="footer.rights">Todos los derechos reservados.</span>
         </p>
 
         <div class="flex gap-6">
@@ -309,7 +392,7 @@ const techStack = [
     }
 </style>
 
-<script>
+<script define:vars={{ translations }}>
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -319,4 +402,61 @@ const techStack = [
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    // Sistema de internacionalización
+    let currentLang = localStorage.getItem('lang') || 'es';
+    
+    function updateLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+        
+        // Actualizar ambos botones de idioma
+        const langTextDesktop = document.getElementById('langText');
+        const langTextMobile = document.getElementById('langTextMobile');
+        const newText = lang === 'es' ? 'EN' : 'ES';
+        
+        if (langTextDesktop) langTextDesktop.textContent = newText;
+        if (langTextMobile) langTextMobile.textContent = newText;
+        
+        // Actualizar nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.textContent = link.getAttribute(`data-${lang}`);
+        });
+        
+        // Actualizar contenido con data-i18n
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const keys = key.split('.');
+            let value = translations[lang];
+            
+            for (const k of keys) {
+                value = value[k];
+            }
+            
+            if (el.hasAttribute('data-i18n-html')) {
+                el.innerHTML = value;
+            } else {
+                el.textContent = value;
+            }
+        });
+    }
+    
+    // Inicializar idioma
+    updateLanguage(currentLang);
+    
+    // Toggle de idioma - Desktop
+    const langToggleBtn = document.getElementById('langToggle');
+    if (langToggleBtn) {
+        langToggleBtn.addEventListener('click', () => {
+            updateLanguage(currentLang === 'es' ? 'en' : 'es');
+        });
+    }
+    
+    // Toggle de idioma - Mobile
+    const langToggleMobileBtn = document.getElementById('langToggleMobile');
+    if (langToggleMobileBtn) {
+        langToggleMobileBtn.addEventListener('click', () => {
+            updateLanguage(currentLang === 'es' ? 'en' : 'es');
+        });
+    }
 </script>
