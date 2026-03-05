@@ -11,7 +11,7 @@ const techStack = [
     { name: "HTML", icon: "html" },
     { name: "CSS", icon: "css" },
     { name: "JavaScript", icon: "js" },
-    { name: "React", icon: "react" },
+    { name: "Vue", icon: "vue" },
     { name: "Astro", icon: "astro" },
     { name: "Tailwind", icon: "tailwind" },
     { name: "Git", icon: "git" },
@@ -23,10 +23,7 @@ const techStack = [
     {name: "Node", icon: "nodejs" },
     { name: "PostgresSQL", icon: "postgres" },
     { name: "Express", icon: "express" },
-    { name: "VS Code", icon: "vscode" },
     { name: "Postman", icon: "postman" },
-    { name: "Supabase", icon: "supabase" },
-    { name: "MongoDB", icon: "mongo" }
 ];
 
 const translations = {
@@ -55,7 +52,8 @@ const translations = {
                 description: "Sistema web para la gestión de pedidos en restaurante, con creación y administración de órdenes, manejo de mesas y proceso de pago.",
                 role: "Mi aporte se centró en el diseño e implementación de las interfaces principales (login, órdenes y pago), creación de componentes reutilizables, diseño responsive, modo claro/oscuro e integración del frontend con las APIs del backend."
             },
-            viewCode: "Ver Código"
+            viewCode: "Ver Código",
+            viewDemo: "Ver Demo"
         },
         education: {
             title: "Educación",
@@ -91,7 +89,8 @@ const translations = {
                 description: "Web system for restaurant order management, with order creation and administration, table handling and payment process.",
                 role: "My contribution focused on the design and implementation of the main interfaces (login, orders and payment), creation of reusable components, responsive design, light/dark mode and frontend integration with backend APIs."
             },
-            viewCode: "View Code"
+            viewCode: "View Code",
+            viewDemo: "Live Demo"
         },
         education: {
             title: "Education",
@@ -228,9 +227,14 @@ const translations = {
                         <br/><br/>
                         <span data-i18n="projects.miaow.role">Desarrollé todo el proyecto como Full Stack Developer: creación de interfaces, lógica del frontend, diseño del backend y APIs, conexión con MySQL, manejo de datos, y despliegue completo en producción.</span>
                     </p>
-                    <a href="https://github.com/iamjohitan/TiendaMiaow" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 hover:text-yellow-300 transition">
-                        <Github size={16} /> <span data-i18n="projects.viewCode">Ver Código</span>
-                    </a>
+                    <div class="flex gap-3 flex-wrap">
+                        <a href="https://github.com/iamjohitan/TiendaMiaow" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 hover:text-yellow-300 transition">
+                            <Github size={16} /> <span data-i18n="projects.viewCode">Ver Código</span>
+                        </a>
+                        <a href="https://tiendamiaow.vercel.app/index.html" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-black bg-yellow-400 px-4 py-2 rounded-lg hover:bg-yellow-300 transition">
+                            <ExternalLink size={16} /> <span data-i18n="projects.viewDemo">Ver Demo</span>
+                        </a>
+                    </div>
                 </div>
             </article>
 
@@ -309,15 +313,15 @@ const translations = {
                     <Award className="text-yellow-400" /> <span data-i18n="education.certifications">Certificaciones</span>
                 </h2>
                 <div class="space-y-4">
-                    <div class="p-5 rounded-xl bg-gradient-to-r from-white/5 to-transparent border border-white/5 flex justify-between items-center group hover:border-yellow-400/30 hover:bg-white/10 transition cursor-default">
+                    <a href="https://certificados-valle.talentotech.co/?cert=3443452662&fingerprint=y#pdf" target="_blank" class="p-5 rounded-xl bg-gradient-to-r from-white/5 to-transparent border border-white/5 flex justify-between items-center group hover:border-yellow-400/30 hover:bg-white/10 transition cursor-pointer">
                         <div>
                             <h4 class="font-bold text-white group-hover:text-yellow-300 transition" data-i18n="education.bootcamp">Bootcamp Desarrollo Web Full Stack</h4>
                             <p class="text-xs text-gray-500 mt-1">TalentoTech / MinTic</p>
                         </div>
                         <div class="w-10 h-10 rounded-full bg-yellow-400/10 flex items-center justify-center group-hover:bg-yellow-400 group-hover:text-black transition duration-300">
-                             <Award size={20} />
+                             <ExternalLink size={20} />
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
