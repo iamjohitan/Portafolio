@@ -11,7 +11,7 @@ const techStack = [
     { name: "HTML", icon: "html" },
     { name: "CSS", icon: "css" },
     { name: "JavaScript", icon: "js" },
-    { name: "Vue", icon: "vue" },
+    { name: "React", icon: "react" },
     { name: "Astro", icon: "astro" },
     { name: "Tailwind", icon: "tailwind" },
     { name: "Git", icon: "git" },
@@ -36,9 +36,9 @@ const translations = {
         },
         about: {
             title: "Sobre mí",
-            p1: "Me llamo <strong class=\"text-white\">Johan</strong>. La tecnología siempre ha sido mi motor, pero fue la programación la que me dio las herramientas para crear. Actualmente me formo como <strong class=\"text-white\">Tecnólogo de Software</strong>, complementando mi educación con proyectos desafiantes que <strong class=\"text-yellow-300\">ponen a prueba mi lógica y mi capacidad para encontrar soluciones eficientes</strong>.",
-            p2: "A lo largo de mi trayectoria he perfeccionado mis habilidades técnicas, aprendiendo que la verdadera maestría no está solo en escribir código, sino en <strong class=\"text-yellow-300\">resolver problemas reales</strong> de forma eficiente, escalable y centrada en el usuario.",
-            p3: "Mi objetivo es crecer profesionalmente aportando soluciones. Busco un entorno donde pueda sumar mi energía y mis habilidades técnicas para construir <strong class=\"text-yellow-300\">productos digitales de alto impacto</strong>.",
+            p1: "Hola, soy <strong class=\"text-white\">Johan</strong>. Me estoy formando como <strong class=\"text-white\">Tecnólogo en Desarrollo de Sistemas y Software</strong> en la Universidad Santiago de Cali, con base desde el SENA como Técnico en Programación.",
+             p2: "He explorado varias áreas del mundo tech: <strong class=\"text-yellow-300\">desarrollo web, bases de datos, redes, administración de Linux y seguridad informática</strong>. Complemento mi formación con certificaciones como <strong class=\"text-white\">CCST Networking de Cisco y Fundamentos de Ciberseguridad</strong> porque me gusta aprender por mi cuenta.",
+            p3: "Estoy buscando unas <strong class=\"text-yellow-300\">prácticas profesionales</strong> donde pueda aportar desde el primer día y seguir creciendo.",
             location: "Cali, Colombia",
             degree: "Tec. Sistemas (En curso)"
         },
@@ -52,6 +52,10 @@ const translations = {
                 description: "Sistema web para la gestión de pedidos en restaurante, con creación y administración de órdenes, manejo de mesas y proceso de pago.",
                 role: "Mi aporte se centró en el diseño e implementación de las interfaces principales (login, órdenes y pago), creación de componentes reutilizables, diseño responsive, modo claro/oscuro e integración del frontend con las APIs del backend."
             },
+            netagora: {
+                description: "Plataforma web corporativa para una agencia de software, enfocada en mostrar servicios de desarrollo a medida y captar clientes internacionales.",
+                role: "Participé como Desarrollador Web en la creación integral de Netagora: UI responsive con Tailwind y animaciones CSS, arquitectura de componentes con Astro para 0kb de JavaScript innecesario, e implementación de SEO técnico avanzado con Schema.org JSON-LD, Open Graph y metaetiquetas dinámicas."
+            },
             viewCode: "Ver Código",
             viewDemo: "Ver Demo"
         },
@@ -60,7 +64,8 @@ const translations = {
             softwareTech: "Tecnología de Software",
             programming: "Técnico en Programación",
             certifications: "Certificaciones",
-            bootcamp: "Bootcamp Desarrollo Web Full Stack"
+            bootcamp: "Bootcamp Desarrollo Web Full Stack",
+            pythonIntro: "Introducción a la Programación con Python"
         },
         footer: { rights: "Todos los derechos reservados." }
     },
@@ -73,9 +78,9 @@ const translations = {
         },
         about: {
             title: "About me",
-            p1: "My name is <strong class=\"text-white\">Johan</strong>. Technology has always been my driving force, but it was programming that gave me the tools to create. I am currently training as a <strong class=\"text-white\">Software Technologist</strong>, complementing my education with challenging projects that <strong class=\"text-yellow-300\">test my logic and my ability to find efficient solutions</strong>.",
-            p2: "Throughout my career I have perfected my technical skills, learning that true mastery is not only in writing code, but in <strong class=\"text-yellow-300\">solving real problems</strong> efficiently, scalably and user-centered.",
-            p3: "My goal is to grow professionally by providing solutions. I'm looking for an environment where I can add my energy and technical skills to build <strong class=\"text-yellow-300\">high-impact digital products</strong>.",
+            p1: "Hi, I'm <strong class=\"text-white\">Johan</strong>. I'm training as an <strong class=\"text-white\">Information Systems and Software Technologist</strong> at Universidad Santiago de Cali, with a technical background from SENA as a Programming Technician.",
+            p2: "I've explored several tech areas: <strong class=\"text-yellow-300\">web development, databases, networking, Linux administration and cybersecurity</strong>. I complement my studies with certifications like <strong class=\"text-white\">Cisco CCST Networking and Cybersecurity Fundamentals</strong> because I enjoy learning on my own.",
+            p3: "I'm looking for a <strong class=\"text-yellow-300\">professional internship</strong> where I can contribute from day one and keep growing.",
             location: "Cali, Colombia",
             degree: "Systems Tech (In progress)"
         },
@@ -89,6 +94,10 @@ const translations = {
                 description: "Web system for restaurant order management, with order creation and administration, table handling and payment process.",
                 role: "My contribution focused on the design and implementation of the main interfaces (login, orders and payment), creation of reusable components, responsive design, light/dark mode and frontend integration with backend APIs."
             },
+            netagora: {
+                description: "Corporate web platform for a software agency, focused on showcasing custom development services and attracting international clients.",
+                role: "I participated as Web Developer in the end-to-end creation of Netagora: responsive UI with Tailwind and CSS animations, Astro component architecture to ensure 0kb of unnecessary JavaScript, and advanced technical SEO with Schema.org JSON-LD, Open Graph and dynamic meta tags."
+            },
             viewCode: "View Code",
             viewDemo: "Live Demo"
         },
@@ -97,7 +106,8 @@ const translations = {
             softwareTech: "Software Technology",
             programming: "Programming Technician",
             certifications: "Certifications",
-            bootcamp: "Full Stack Web Development Bootcamp"
+            bootcamp: "Full Stack Web Development Bootcamp",
+            pythonIntro: "Introduction to Programming with Python"
         },
         footer: { rights: "All rights reserved." }
     }
@@ -231,7 +241,36 @@ const translations = {
                         <a href="https://github.com/iamjohitan/TiendaMiaow" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 hover:text-yellow-300 transition">
                             <Github size={16} /> <span data-i18n="projects.viewCode">Ver Código</span>
                         </a>
-                        <a href="https://tiendamiaow.vercel.app/index.html" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-black bg-yellow-400 px-4 py-2 rounded-lg hover:bg-yellow-300 transition">
+                        <a href="https://tiendamiaow.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-black bg-yellow-400 px-4 py-2 rounded-lg hover:bg-yellow-300 transition">
+                            <ExternalLink size={16} /> <span data-i18n="projects.viewDemo">Ver Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+                        <article class="group relative rounded-2xl border border-white/10 bg-[#0f0f0f] overflow-hidden hover:border-yellow-400/30 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)] transition duration-500">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent z-10 opacity-80"></div>
+                    <img src="/netagora_landing.jpg" alt="Netagora" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                </div>
+
+                <div class="p-8 relative z-20 -mt-12">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-yellow-300 transition">Netagora</h3>
+                        <div class="flex gap-2 bg-black/50 backdrop-blur-md p-2 rounded-lg border border-white/10">
+                            <img src="https://skillicons.dev/icons?i=astro,tailwind,vercel" class="h-5" alt="Techs" />
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                        <span data-i18n="projects.netagora.description">Plataforma web corporativa para una agencia de software, enfocada en mostrar servicios de desarrollo a medida y captar clientes internacionales.</span>
+                        <br/><br/>
+                        <span data-i18n="projects.netagora.role">Participé como Desarrollador Web en la creación integral de Netagora: UI responsive con Tailwind y animaciones CSS, arquitectura de componentes con Astro para 0kb de JavaScript innecesario, e implementación de SEO técnico avanzado con Schema.org JSON-LD, Open Graph y metaetiquetas dinámicas.</span>
+                    </p>
+                    <div class="flex gap-3 flex-wrap">
+                        <a href="https://github.com/NetagoraCompany/LandingPage" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 hover:text-yellow-300 transition">
+                            <Github size={16} /> <span data-i18n="projects.viewCode">Ver Código</span>
+                        </a>
+                        <a href="https://www.netagora.co/" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-black bg-yellow-400 px-4 py-2 rounded-lg hover:bg-yellow-300 transition">
                             <ExternalLink size={16} /> <span data-i18n="projects.viewDemo">Ver Demo</span>
                         </a>
                     </div>
@@ -260,6 +299,8 @@ const translations = {
                     </a>
                 </div>
             </article>
+
+
 
         </div>
     </section>
@@ -317,6 +358,16 @@ const translations = {
                         <div>
                             <h4 class="font-bold text-white group-hover:text-yellow-300 transition" data-i18n="education.bootcamp">Bootcamp Desarrollo Web Full Stack</h4>
                             <p class="text-xs text-gray-500 mt-1">TalentoTech / MinTic</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-yellow-400/10 flex items-center justify-center group-hover:bg-yellow-400 group-hover:text-black transition duration-300">
+                             <ExternalLink size={20} />
+                        </div>
+                    </a>
+
+                    <a href="/python_santander.pdf" target="_blank" rel="noopener noreferrer" class="p-5 rounded-xl bg-gradient-to-r from-white/5 to-transparent border border-white/5 flex justify-between items-center group hover:border-yellow-400/30 hover:bg-white/10 transition cursor-pointer">
+                        <div>
+                            <h4 class="font-bold text-white group-hover:text-yellow-300 transition" data-i18n="education.pythonIntro">Introducción a la Programación con Python</h4>
+                            <p class="text-xs text-gray-500 mt-1">Santander Open Academy</p>
                         </div>
                         <div class="w-10 h-10 rounded-full bg-yellow-400/10 flex items-center justify-center group-hover:bg-yellow-400 group-hover:text-black transition duration-300">
                              <ExternalLink size={20} />
