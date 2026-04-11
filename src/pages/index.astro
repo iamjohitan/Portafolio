@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm';
 import { 
     Github, Linkedin, Mail, Code2, 
     GraduationCap, Award, Shapes, User, 
@@ -28,17 +29,16 @@ const techStack = [
 
 const translations = {
     es: {
-        nav: { home: "Inicio", profile: "Perfil", projects: "Proyectos", stack: "Stack", education: "Educación" },
+        nav: { home: "Inicio", profile: "Perfil", projects: "Proyectos", stack: "Stack", education: "Educación", contact: "Contacto" },
         hero: {
             available: "Disponible para trabajar",
-            title: "Full-Stack Developer.",
-            description: "Capaz de navegar todo el ciclo de desarrollo, desde la arquitectura de base de datos hasta la interfaz de usuario, creando software que funciona tan bien como se ve."
+            description: "Tecnólogo en Desarrollo de Sistemas y Software en formación. Desarrollo · Redes · Linux · BD · Seguridad."
         },
         about: {
             title: "Sobre mí",
             p1: "Hola, soy <strong class=\"text-white\">Johan</strong>. Me estoy formando como <strong class=\"text-white\">Tecnólogo en Desarrollo de Sistemas y Software</strong> en la Universidad Santiago de Cali, con base desde el SENA como Técnico en Programación.",
-             p2: "He explorado varias áreas del mundo tech: <strong class=\"text-yellow-300\">desarrollo web, bases de datos, redes, administración de Linux y seguridad informática</strong>. Complemento mi formación con certificaciones como <strong class=\"text-white\">CCST Networking de Cisco y Fundamentos de Ciberseguridad</strong> porque me gusta aprender por mi cuenta.",
-            p3: "Estoy buscando unas <strong class=\"text-yellow-300\">prácticas profesionales</strong> donde pueda aportar desde el primer día y seguir creciendo.",
+            p2: "He explorado varias áreas del mundo tech: <strong class=\"text-yellow-300\">desarrollo web, bases de datos, redes, administración de Linux y seguridad informática</strong>. Complemento mi formación con certificaciones como <strong class=\"text-white\">CCST Networking y CCST Cybersecurity de Cisco</strong> porque me gusta aprender por mi cuenta.",
+            p3: "Estoy en busca de un <strong class=\"text-yellow-300\">entorno profesional</strong> donde pueda aportar desde el primer día y seguir creciendo.",
             location: "Cali, Colombia",
             degree: "Tec. Sistemas (En curso)"
         },
@@ -70,17 +70,16 @@ const translations = {
         footer: { rights: "Todos los derechos reservados." }
     },
     en: {
-        nav: { home: "Home", profile: "Profile", projects: "Projects", stack: "Stack", education: "Education" },
+        nav: { home: "Home", profile: "Profile", projects: "Projects", stack: "Stack", education: "Education", contact: "Contact" },
         hero: {
             available: "Available for work",
-            title: "Full-Stack Developer.",
-            description: "Capable of navigating the entire development cycle, from database architecture to user interface, creating software that works as well as it looks."
+            description: "Information Systems and Software Technologist in training. Development · Networking · Linux · DB · Security."
         },
         about: {
             title: "About me",
             p1: "Hi, I'm <strong class=\"text-white\">Johan</strong>. I'm training as an <strong class=\"text-white\">Information Systems and Software Technologist</strong> at Universidad Santiago de Cali, with a technical background from SENA as a Programming Technician.",
-            p2: "I've explored several tech areas: <strong class=\"text-yellow-300\">web development, databases, networking, Linux administration and cybersecurity</strong>. I complement my studies with certifications like <strong class=\"text-white\">Cisco CCST Networking and Cybersecurity Fundamentals</strong> because I enjoy learning on my own.",
-            p3: "I'm looking for a <strong class=\"text-yellow-300\">professional internship</strong> where I can contribute from day one and keep growing.",
+            p2: "I've explored several tech areas: <strong class=\"text-yellow-300\">web development, databases, networking, Linux administration and cybersecurity</strong>. I complement my studies with certifications like <strong class=\"text-white\">Cisco CCST Networking and CCST Cybersecurity</strong> because I enjoy learning on my own.",
+            p3: "I'm looking for a <strong class=\"text-yellow-300\">professional environment</strong> where I can contribute from day one and keep growing.",
             location: "Cali, Colombia",
             degree: "Systems Tech (In progress)"
         },
@@ -114,7 +113,7 @@ const translations = {
 };
 ---
 
-<Layout title="Johan Lucumi | Full-Stack Developer">
+<Layout title="Johan Lucumi | Dev & Systems">
   
   <div class="fixed inset-0 -z-10 h-full w-full bg-[#050505] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]">
       <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-yellow-400 opacity-20 blur-[100px]"></div>
@@ -128,6 +127,7 @@ const translations = {
         <a href="#proyectos" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Proyectos" data-en="Projects">Proyectos</a>
         <a href="#stack" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Stack" data-en="Stack">Stack</a>
         <a href="#educacion" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Educación" data-en="Education">Educación</a>
+        <a href="#contacto" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Contacto" data-en="Contact">Contacto</a>
         <button id="langToggle" class="hidden md:flex items-center gap-1 text-sm font-medium text-yellow-400 hover:text-yellow-300 transition border-l border-white/10 pl-6">
             <Languages size={16} /> <span id="langText">EN</span>
         </button>
@@ -156,7 +156,7 @@ const translations = {
         </h1>
         
         <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-            <strong class="text-yellow-300 font-semibold" data-i18n="hero.title">Full-Stack Developer.</strong> <span data-i18n="hero.description">Capaz de navegar todo el ciclo de desarrollo, desde la arquitectura de base de datos hasta la interfaz de usuario, creando software que funciona tan bien como se ve.</span>
+            <span data-i18n="hero.description">Tecnólogo en Desarrollo de Sistemas y Software en formación. Desarrollo web · Redes · Linux · BD · Seguridad.</span>
         </p>
         <div class="flex flex-col md:flex-row gap-4 items-center">
             <a href="https://www.linkedin.com/in/johanlucumi/" target="_blank" class="group px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-yellow-300 transition-all duration-300 flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(253,224,71,0.4)] hover:-translate-y-1">
@@ -379,6 +379,10 @@ const translations = {
         </div>
     </section>
 
+    <section id="contacto">
+        <ContactForm client:load />
+    </section>
+
   </main>
 
   <footer class="border-t border-white/10 bg-[#020202] py-8">
@@ -506,6 +510,8 @@ const translations = {
     if (langToggleBtn) {
         langToggleBtn.addEventListener('click', () => {
             updateLanguage(currentLang === 'es' ? 'en' : 'es');
+            // Notificar al componente React del cambio de idioma
+            window.dispatchEvent(new Event('languageChange'));
         });
     }
     
@@ -514,6 +520,8 @@ const translations = {
     if (langToggleMobileBtn) {
         langToggleMobileBtn.addEventListener('click', () => {
             updateLanguage(currentLang === 'es' ? 'en' : 'es');
+            // Notificar al componente React del cambio de idioma
+            window.dispatchEvent(new Event('languageChange'));
         });
     }
 </script>
