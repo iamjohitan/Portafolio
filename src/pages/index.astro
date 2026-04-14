@@ -5,14 +5,14 @@ import {
     Github, Linkedin, Mail, Code2, 
     GraduationCap, Award, Shapes, User, 
     ExternalLink, MapPin, Download, ChevronRight,
-    Briefcase, Languages
+    Briefcase, Languages, Menu, X
 } from 'lucide-react';
 
 const techStack = [
     { name: "HTML", icon: "html" },
     { name: "CSS", icon: "css" },
     { name: "JavaScript", icon: "js" },
-    { name: "React", icon: "react" },
+    { name: "Vue", icon: "vue" },
     { name: "Astro", icon: "astro" },
     { name: "Tailwind", icon: "tailwind" },
     { name: "Git", icon: "git" },
@@ -121,16 +121,37 @@ const translations = {
   </div>
 
   <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] md:w-auto">
-    <div class="flex items-center gap-6 px-6 py-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-full shadow-2xl overflow-x-auto">
+    <!-- Navbar Desktop -->
+    <div class="hidden md:flex items-center gap-6 px-6 py-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-full shadow-2xl">
         <a href="#inicio" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Inicio" data-en="Home">Inicio</a>
         <a href="#sobre-mi" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Perfil" data-en="Profile">Perfil</a>
         <a href="#proyectos" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Proyectos" data-en="Projects">Proyectos</a>
         <a href="#stack" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Stack" data-en="Stack">Stack</a>
         <a href="#educacion" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Educación" data-en="Education">Educación</a>
         <a href="#contacto" class="nav-link text-sm font-medium text-gray-300 hover:text-yellow-400 transition" data-es="Contacto" data-en="Contact">Contacto</a>
-        <button id="langToggle" class="hidden md:flex items-center gap-1 text-sm font-medium text-yellow-400 hover:text-yellow-300 transition border-l border-white/10 pl-6">
+        <button id="langToggle" class="flex items-center gap-1 text-sm font-medium text-yellow-400 hover:text-yellow-300 transition border-l border-white/10 pl-6">
             <Languages size={16} /> <span id="langText">EN</span>
         </button>
+    </div>
+
+    <!-- Navbar Mobile -->
+    <div class="md:hidden flex items-center justify-between px-6 py-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl">
+        <h3 class="text-white font-bold">Johan</h3>
+        <button id="menuToggle" class="text-gray-300 hover:text-yellow-400 transition">
+            <Menu size={24} />
+        </button>
+    </div>
+
+    <!-- Menu Desplegable Mobile -->
+    <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 right-0 mt-3 bg-black/90 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+        <div class="px-4 py-4 space-y-2">
+            <a href="#inicio" class="nav-link block px-4 py-2 text-gray-300 hover:text-yellow-400 hover:bg-white/5 rounded-lg transition" data-es="Inicio" data-en="Home">Inicio</a>
+            <a href="#sobre-mi" class="nav-link block px-4 py-2 text-gray-300 hover:text-yellow-400 hover:bg-white/5 rounded-lg transition" data-es="Perfil" data-en="Profile">Perfil</a>
+            <a href="#proyectos" class="nav-link block px-4 py-2 text-gray-300 hover:text-yellow-400 hover:bg-white/5 rounded-lg transition" data-es="Proyectos" data-en="Projects">Proyectos</a>
+            <a href="#stack" class="nav-link block px-4 py-2 text-gray-300 hover:text-yellow-400 hover:bg-white/5 rounded-lg transition" data-es="Stack" data-en="Stack">Stack</a>
+            <a href="#educacion" class="nav-link block px-4 py-2 text-gray-300 hover:text-yellow-400 hover:bg-white/5 rounded-lg transition" data-es="Educación" data-en="Education">Educación</a>
+            <a href="#contacto" class="nav-link block px-4 py-2 text-gray-300 hover:text-yellow-400 hover:bg-white/5 rounded-lg transition" data-es="Contacto" data-en="Contact">Contacto</a>
+        </div>
     </div>
   </nav>
 
@@ -464,6 +485,22 @@ const translations = {
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
+    // Manejo del menú móvil
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Cerrar el menú al hacer clic en un enlace
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
     // Sistema de internacionalización
     let currentLang = localStorage.getItem('lang') || 'es';
     
@@ -471,7 +508,7 @@ const translations = {
         currentLang = lang;
         localStorage.setItem('lang', lang);
         
-        // Actualizar ambos botones de idioma
+        // Actualizar botones de idioma
         const langTextDesktop = document.getElementById('langText');
         const langTextMobile = document.getElementById('langTextMobile');
         const newText = lang === 'es' ? 'EN' : 'ES';
@@ -515,7 +552,7 @@ const translations = {
         });
     }
     
-    // Toggle de idioma - Mobile
+    // Toggle de idioma - Mobile Flotante
     const langToggleMobileBtn = document.getElementById('langToggleMobile');
     if (langToggleMobileBtn) {
         langToggleMobileBtn.addEventListener('click', () => {
