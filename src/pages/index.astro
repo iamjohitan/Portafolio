@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm';
+import '../styles/index.css';
 import { 
     Github, Linkedin, Mail, Code2, 
     GraduationCap, Award, Shapes, User, 
@@ -22,7 +23,7 @@ const techStack = [
     { name: "Bootstrap", icon: "bootstrap" },
     { name: "Vercel", icon: "vercel" },
     {name: "Node", icon: "nodejs" },
-    { name: "PostgresSQL", icon: "postgres" },
+    { name: "PostgreSQL", icon: "postgres" },
     { name: "Express", icon: "express" },
     { name: "Postman", icon: "postman" },
 ];
@@ -32,12 +33,12 @@ const translations = {
         nav: { home: "Inicio", profile: "Perfil", projects: "Proyectos", stack: "Stack", education: "Educación", contact: "Contacto" },
         hero: {
             available: "Disponible para trabajar",
-            description: "Tecnólogo en Desarrollo de Sistemas y Software en formación. Desarrollo · Redes · Linux · BD · Seguridad."
+            description: "Tecnólogo en Desarrollo de Sistemas y Software en formación. Desarrollo · Redes · Linux · BD · Seguridad · Automatización."
         },
         about: {
             title: "Sobre mí",
             p1: "Hola, soy <strong class=\"text-white\">Johan</strong>. Me estoy formando como <strong class=\"text-white\">Tecnólogo en Desarrollo de Sistemas y Software</strong> en la Universidad Santiago de Cali, con base desde el SENA como Técnico en Programación.",
-            p2: "He explorado varias áreas del mundo tech: <strong class=\"text-yellow-300\">desarrollo web, bases de datos, redes, administración de Linux y seguridad informática</strong>. Complemento mi formación con certificaciones como <strong class=\"text-white\">CCST Networking y CCST Cybersecurity de Cisco</strong> porque me gusta aprender por mi cuenta.",
+            p2: "He explorado varias áreas del mundo tech: <strong class=\"text-yellow-300\">desarrollo web, bases de datos, redes, administración de Linux y seguridad informática</strong>. Complemento mi formación de forma autónoma con cursos como <strong class=\"text-white\">CCST Networking y CCST Cybersecurity de Cisco</strong> porque me gusta seguir aprendiendo por mi cuenta.",
             p3: "Estoy en busca de un <strong class=\"text-yellow-300\">entorno profesional</strong> donde pueda aportar desde el primer día y seguir creciendo.",
             location: "Cali, Colombia",
             degree: "Tec. Sistemas (En curso)"
@@ -73,12 +74,12 @@ const translations = {
         nav: { home: "Home", profile: "Profile", projects: "Projects", stack: "Stack", education: "Education", contact: "Contact" },
         hero: {
             available: "Available for work",
-            description: "Information Systems and Software Technologist in training. Development · Networking · Linux · DB · Security."
+            description: "Information Systems and Software Technologist in training. Development · Networking · Linux · DB · Security · Automation."
         },
         about: {
             title: "About me",
             p1: "Hi, I'm <strong class=\"text-white\">Johan</strong>. I'm training as an <strong class=\"text-white\">Information Systems and Software Technologist</strong> at Universidad Santiago de Cali, with a technical background from SENA as a Programming Technician.",
-            p2: "I've explored several tech areas: <strong class=\"text-yellow-300\">web development, databases, networking, Linux administration and cybersecurity</strong>. I complement my studies with certifications like <strong class=\"text-white\">Cisco CCST Networking and CCST Cybersecurity</strong> because I enjoy learning on my own.",
+            p2: "I've explored several tech areas: <strong class=\"text-yellow-300\">web development, databases, networking, Linux administration and cybersecurity</strong>. I complement my training on my own with courses like <strong class=\"text-white\">Cisco CCST Networking and CCST Cybersecurity</strong> because I enjoy keeping up with learning.",
             p3: "I'm looking for a <strong class=\"text-yellow-300\">professional environment</strong> where I can contribute from day one and keep growing.",
             location: "Cali, Colombia",
             degree: "Systems Tech (In progress)"
@@ -410,7 +411,7 @@ const translations = {
     <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
         
         <p class="text-gray-600 text-sm text-center md:text-left">
-            © 2025 Johan Lucumi. <span data-i18n="footer.rights">Todos los derechos reservados.</span>
+            © 2026 Johan Lucumi. <span data-i18n="footer.rights">Todos los derechos reservados.</span>
         </p>
 
         <div class="flex gap-6">
@@ -429,50 +430,6 @@ const translations = {
   </footer>
 
 </Layout>
-
-<style>
-    .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease-out;
-    }
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Animación Infinita para el Stack */
-    @keyframes infinite-scroll {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
-    }
-    .animate-infinite-scroll {
-        animation: infinite-scroll 25s linear infinite;
-    }
-    .mask-linear-gradient {
-        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    }
-
-    /* Animación de Flotar para la foto */
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-    .animate-float {
-        animation: float 6s ease-in-out infinite;
-    }
-
-    /* Texto Gradiente */
-    @keyframes gradient-text {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    .animate-gradient-text {
-        background-size: 200% auto;
-        animation: gradient-text 5s ease infinite;
-    }
-</style>
 
 <script define:vars={{ translations }}>
     const observer = new IntersectionObserver((entries) => {
