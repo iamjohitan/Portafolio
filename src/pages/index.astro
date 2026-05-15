@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm';
+import CVDownloadButton from '../components/CVDownloadButton';
 import '../styles/index.css';
 import { 
     Github, Linkedin, Mail, Code2, 
@@ -33,12 +34,12 @@ const translations = {
         nav: { home: "Inicio", profile: "Perfil", projects: "Proyectos", stack: "Stack", education: "Educación", contact: "Contacto" },
         hero: {
             available: "Disponible para trabajar",
-            description: "Tecnólogo en Desarrollo de Sistemas y Software en formación Desarrollo Web · Análisis de Datos · Automatización"
+            description: "Tecnólogo en Desarrollo de Sistemas y Software en formación Desarrollo Frontend · Análisis de Datos · Automatización"
         },
         about: {
             title: "Sobre mí",
             p1: "Hola, soy <strong class=\"text-white\">Johan</strong>. Me estoy formando como <strong class=\"text-white\">Tecnólogo en Desarrollo de Sistemas de Información y Software</strong>, con base como Técnico en Programación.",
-            p2: "Tengo experiencia en <strong class=\"text-yellow-300\">desarrollo frontend</strong> con enfoque en el ecosistema <strong class=\"text-white\">JavaScript</strong> (Node.js, Vue.js, Express.js), construyendo desde interfaces hasta APIs y conexiones con bases de datos.",
+            p2: "Tengo experiencia en <strong class=\"text-yellow-300\">desarrollo frontend</strong> con enfoque en el ecosistema <strong class=\"text-white\">JavaScript</strong> (Vue.js, React, Astro), construyendo interfaces modernas y responsivas con componentes reutilizables e integración de APIs. Complemento mi perfil con conocimientos en <strong class=\"text-white\">Node.js, Express.js y Python</strong> para ampliar mi visión del desarrollo.",
             p3: "Actualmente me estoy adentrando en el <strong class=\"text-yellow-300\">análisis de datos</strong>, trabajando con <strong class=\"text-white\">Python y SQL</strong> y formándome en diseño de bases de datos con <strong class=\"text-white\">Oracle Academy</strong>. Cuento con un nivel de inglés <strong class=\"text-white\">B1</strong> que me permite desenvolverme en entornos técnicos en inglés.",
             location: "Cali, Colombia",
             degree: "Tec. Sistemas (Finalizando)"
@@ -55,7 +56,7 @@ const translations = {
             },
             netagora: {
                 description: "Plataforma web corporativa para una agencia de software, enfocada en mostrar servicios de desarrollo a medida y captar clientes internacionales.",
-                role: "Participé como Desarrollador Web en la creación integral de Netagora: UI responsive con Tailwind y animaciones CSS, arquitectura de componentes con Astro para 0kb de JavaScript innecesario, e implementación de SEO técnico avanzado con Schema.org JSON-LD, Open Graph y metaetiquetas dinámicas."
+                role: "Participé como Frontend Developer en la creación integral de Netagora: UI responsive con Tailwind y animaciones CSS, arquitectura de componentes con Astro para 0kb de JavaScript innecesario, e implementación de SEO técnico avanzado con Schema.org JSON-LD, Open Graph y metaetiquetas dinámicas."
             },
             viewCode: "Ver Código",
             viewDemo: "Ver Demo"
@@ -79,7 +80,7 @@ const translations = {
         about: {
             title: "About me",
             p1: "Hi, I'm <strong class=\"text-white\">Johan</strong>. I'm training as an <strong class=\"text-white\">Information Systems and Software Technologist</strong>, with a technical background as a Programming Technician.",
-            p2: "I have experience in <strong class=\"text-yellow-300\">frontend development</strong> with a focus on the <strong class=\"text-white\">JavaScript</strong> ecosystem (Node.js, Vue.js, Express.js), building everything from interfaces to APIs and database connections.",
+            p2: "I have experience in <strong class=\"text-yellow-300\">frontend development</strong> with a focus on the <strong class=\"text-white\">JavaScript</strong> ecosystem (Vue.js, React, Astro), building modern and responsive interfaces with reusable components and API integrations. I complement my profile with knowledge in <strong class=\"text-white\">Node.js, Express.js and Python</strong> to broaden my development vision.",
             p3: "I'm currently diving into <strong class=\"text-yellow-300\">data analysis</strong>, working with <strong class=\"text-white\">Python and SQL</strong> and training in database design with <strong class=\"text-white\">Oracle Academy</strong>. I have a <strong class=\"text-white\">B1</strong> English level that allows me to work in technical environments in English.",
             location: "Cali, Colombia",
             degree: "Systems Tech (Finishing)"
@@ -96,7 +97,7 @@ const translations = {
             },
             netagora: {
                 description: "Corporate web platform for a software agency, focused on showcasing custom development services and attracting international clients.",
-                role: "I participated as Web Developer in the end-to-end creation of Netagora: responsive UI with Tailwind and CSS animations, Astro component architecture to ensure 0kb of unnecessary JavaScript, and advanced technical SEO with Schema.org JSON-LD, Open Graph and dynamic meta tags."
+                role: "I participated as Frontend Developer in the end-to-end creation of Netagora: responsive UI with Tailwind and CSS animations, Astro component architecture to ensure 0kb of unnecessary JavaScript, and advanced technical SEO with Schema.org JSON-LD, Open Graph and dynamic meta tags."
             },
             viewCode: "View Code",
             viewDemo: "Live Demo"
@@ -114,7 +115,7 @@ const translations = {
 };
 ---
 
-<Layout title="Johan Lucumi | Web Dev & Data">
+<Layout title="Johan Lucumi | Frontend & Data Analytics">
   
     <div class="fixed inset-0 -z-10 h-full w-full bg-[#050505] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[24px_24px]">
       <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-yellow-400 opacity-20 blur-[100px]"></div>
@@ -186,9 +187,7 @@ const translations = {
                 <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
             
-            <a href="/CV_Johan_Lucumi_Web.pdf" target="_blank" class="px-8 py-4 border border-white/10 bg-white/5 text-white rounded-full hover:bg-white/10 hover:border-white/30 transition flex items-center gap-2 backdrop-blur-sm">
-                <Download size={20} /> CV
-            </a>
+            <CVDownloadButton client:load />
 
             <a href="https://github.com/iamjohitan" target="_blank" class="px-8 py-4 border border-white/10 bg-white/5 text-white rounded-full hover:bg-white/10 hover:border-white/30 transition flex items-center gap-2 backdrop-blur-sm">
                 <Github size={20} /> GitHub
