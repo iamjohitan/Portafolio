@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+    title: string;
     description?: string;
 }
 
@@ -8,44 +8,88 @@ import '../styles/global.css';
 
 const { 
     title, 
-    description = "Portafolio de Johan Lucumi - Tecnólogo en Software en formación. Desarrollo Full-Stack · Análisis de Datos · Automatización.  Cali, Colombia." 
+    description = "Portafolio de Johan Lucumi — Full Stack Developer y estudiante de Análisis de Datos. Proyectos reales con JavaScript, React, Vue.js, Node.js, MySQL y Power BI. Cali, Colombia." 
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-        
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Primary SEO -->
+        <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="author" content="Johan Esneider Lucumi Palacios" />
-<meta name="keywords" content="Johan Developer, Johan Lucumi, Johan Esneider Lucumi Palacios, Análisis de Datos, Bases de Datos, Desarrollo Web, Python, React, JavaScript, Node.js, SQL, Oracle DB, Tecnólogo en Software, Cali, Colombia, Astro, Portafolio" />        
+        <meta name="keywords" content="Johan Lucumi, Full Stack Developer, Desarrollo Web, JavaScript, React, Vue.js, Node.js, Express.js, MySQL, Python, SQL, Power BI, Análisis de Datos, Portafolio, Cali, Colombia" />
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- Open Graph -->
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/og-image.jpg" /> 
-		<meta name="google-site-verification" content="faZ8wjwseo_HmxHFjWAodw4L95cy3YND7ys4YsebfjY" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="es_CO" />
+        <meta property="og:site_name" content="Johan Lucumi | Portafolio" />
 
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content="/og-image.jpg" />
+
+        <!-- Schema.org JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Johan Esneider Lucumi Palacios",
+            "url": "https://netagora.co",
+            "jobTitle": "Full Stack Developer",
+            "description": "Full Stack Developer y estudiante de Análisis de Datos. Cali, Colombia.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Cali",
+                "addressCountry": "CO"
+            },
+            "knowsAbout": ["JavaScript", "React", "Vue.js", "Node.js", "MySQL", "Python", "SQL", "Power BI", "Análisis de Datos"],
+            "sameAs": [
+                "https://linkedin.com/in/johanlucumi",
+                "https://github.com/iamjohitan"
+            ]
+        }
+        </script>
+
+        <!-- Google Verification -->
+        <meta name="google-site-verification" content="faZ8wjwseo_HmxHFjWAodw4L95cy3YND7ys4YsebfjY" />
+
+        <!-- Favicon -->
         <link rel="icon" type="image/png" href="/icon.png" />
-		<title>{title}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
-	</head>
-    
-	<body class="bg-[#0a0a0a] text-white font-['Onest']">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet" />
+    </head>
+
+    <body class="bg-[#0a0a0a] text-white font-['Onest']">
         <div class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
-		
+
         <main class="max-w-6xl mx-auto px-4 py-10">
-			<slot />
-		</main>
-	</body>
+            <slot />
+        </main>
+    </body>
 </html>
 
 <style is:global>
-	html {
-		font-family: 'Onest', system-ui, sans-serif;
-		scroll-behavior: smooth;
-	}
+    html {
+        font-family: 'Onest', system-ui, sans-serif;
+        scroll-behavior: smooth;
+    }
 </style>

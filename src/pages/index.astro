@@ -21,10 +21,10 @@ const techStack = [
     { name: "GitHub", icon: "github" },
     { name: "Python", icon: "python" },
     { name: "MySQL", icon: "mysql" },
+    { name: "PostgreSQL", icon: "postgres" },
     { name: "Bootstrap", icon: "bootstrap" },
     { name: "Vercel", icon: "vercel" },
     {name: "Node", icon: "nodejs" },
-    { name: "PostgreSQL", icon: "postgres" },
     { name: "Express", icon: "express" },
     { name: "Postman", icon: "postman" },
 ];
@@ -34,29 +34,29 @@ const translations = {
         nav: { home: "Inicio", profile: "Perfil", projects: "Proyectos", stack: "Stack", education: "Educación", contact: "Contacto" },
         hero: {
             available: "Disponible para trabajar",
-            description: "Tecnólogo en Desarrollo de Sistemas y Software en formación Desarrollo Frontend · Análisis de Datos · Automatización"
+            description: "Tecnólogo en Desarrollo de Sistemas y Software en formación Desarrollador Full Stack & Analista de Datos"
         },
         about: {
             title: "Sobre mí",
             p1: "Hola, soy <strong class=\"text-white\">Johan</strong>. Me estoy formando como <strong class=\"text-white\">Tecnólogo en Desarrollo de Sistemas de Información y Software</strong>, con base como Técnico en Programación.",
-            p2: "Tengo experiencia en <strong class=\"text-yellow-300\">desarrollo frontend</strong> con enfoque en el ecosistema <strong class=\"text-white\">JavaScript</strong> (Vue.js, React, Astro), construyendo interfaces modernas y responsivas con componentes reutilizables e integración de APIs. Complemento mi perfil con conocimientos en <strong class=\"text-white\">Node.js, Express.js y Python</strong> para ampliar mi visión del desarrollo.",
-            p3: "Actualmente me estoy adentrando en el <strong class=\"text-yellow-300\">análisis de datos</strong>, trabajando con <strong class=\"text-white\">Python y SQL</strong> y formándome en diseño de bases de datos con <strong class=\"text-white\">Oracle Academy</strong>. Cuento con un nivel de inglés <strong class=\"text-white\">B1</strong> que me permite desenvolverme en entornos técnicos en inglés.",
+            p2: "Construyo aplicaciones web de principio a fin como <strong class=\"text-yellow-300\">Full Stack Developer</strong>, desde interfaces modernas con <strong class=\"text-white\">JavaScript, Vue.js, React y Astro</strong>, hasta APIs REST y bases de datos con <strong class=\"text-white\">Node.js, Express.js y MySQL</strong>.",
+            p3: "Actualmente estoy expandiendo mi perfil hacia el <strong class=\"text-yellow-300\">análisis de datos</strong>, trabajando con <strong class=\"text-white\">Python, SQL, Excel y Power BI</strong> para transformar datos en información útil para la toma de decisiones.",
             location: "Cali, Colombia",
             degree: "Tec. Sistemas (Finalizando)"
         },
         projects: {
             title: "Proyectos",
             miaow: {
-                description: "E-commerce Full-Stack simulado. Incluye gestión de inventario SQL, lógica de precios y un \"PC Builder\" interactivo. Demuestra capacidad de manejar flujo de datos complejo.",
-                role: "Desarrollé todo el proyecto como Full Stack Developer: creación de interfaces, lógica del frontend, diseño del backend y APIs, conexión con MySQL, manejo de datos, y despliegue completo en producción."
+                description: "Plataforma Full Stack de ventas de hardware PC con PC Builder interactivo, catálogo con filtros dinámicos, gestión de inventario en base de datos y flujo de cotización por WhatsApp.",
+                role: "Desarrollé todo el proyecto de principio a fin: interfaces, lógica frontend, APIs REST con Node.js y Express.js, base de datos con MySQL, formulario de contacto asíncrono con despliegue del backend en Railway y frontend en Vercel."
             },
             aqua: {
                 description: "Sistema web para la gestión de pedidos en restaurante, con creación y administración de órdenes, manejo de mesas y proceso de pago.",
                 role: "Mi aporte se centró en el diseño e implementación de las interfaces principales (login, órdenes y pago), creación de componentes reutilizables, diseño responsive, modo claro/oscuro e integración del frontend con las APIs del backend."
             },
             netagora: {
-                description: "Plataforma web corporativa para una agencia de software, enfocada en mostrar servicios de desarrollo a medida y captar clientes internacionales.",
-                role: "Participé como Frontend Developer en la creación integral de Netagora: UI responsive con Tailwind y animaciones CSS, arquitectura de componentes con Astro para 0kb de JavaScript innecesario, e implementación de SEO técnico avanzado con Schema.org JSON-LD, Open Graph y metaetiquetas dinámicas."
+                description: "Landing page corporativa para una agencia de software, con sistema i18n bilingüe (ES/EN), SEO técnico avanzado y UI responsive con animaciones personalizadas.",
+                role: "Desarrollé la plataforma completa como Frontend Developer: UI responsive con Tailwind, arquitectura de componentes con Astro para 0kb de JavaScript innecesario, SEO técnico con Schema.org JSON-LD, Open Graph, hreflang y metaetiquetas dinámicas."
             },
             viewCode: "Ver Código",
             viewDemo: "Ver Demo"
@@ -67,7 +67,8 @@ const translations = {
             programming: "Técnico en Programación",
             certifications: "Certificaciones",
             bootcamp: "Bootcamp Desarrollo Web Full Stack",
-            pythonIntro: "Python Essentials 1"
+            pythonIntro: "Fundamentos de Python 1",
+            googleAI: "Certificado Profesional de Google AI"
         },
         footer: { rights: "Todos los derechos reservados." }
     },
@@ -75,29 +76,29 @@ const translations = {
         nav: { home: "Home", profile: "Profile", projects: "Projects", stack: "Stack", education: "Education", contact: "Contact" },
         hero: {
             available: "Available for work",
-            description: "Information Systems and Software Technologist in training Development · Data Analysis · Automation"
+            description: "Information Systems and Software Technologist in training<br />Full Stack Developer & Data Analyst"
         },
         about: {
             title: "About me",
-            p1: "Hi, I'm <strong class=\"text-white\">Johan</strong>. I'm training as an <strong class=\"text-white\">Information Systems and Software Technologist</strong>, with a technical background as a Programming Technician.",
-            p2: "I have experience in <strong class=\"text-yellow-300\">frontend development</strong> with a focus on the <strong class=\"text-white\">JavaScript</strong> ecosystem (Vue.js, React, Astro), building modern and responsive interfaces with reusable components and API integrations. I complement my profile with knowledge in <strong class=\"text-white\">Node.js, Express.js and Python</strong> to broaden my development vision.",
-            p3: "I'm currently diving into <strong class=\"text-yellow-300\">data analysis</strong>, working with <strong class=\"text-white\">Python and SQL</strong> and training in database design with <strong class=\"text-white\">Oracle Academy</strong>. I have a <strong class=\"text-white\">B1</strong> English level that allows me to work in technical environments in English.",
+            p1: "Hi, I'm <strong class=\"text-white\">Johan</strong>. I'm studying to become a <strong class=\"text-white\">Technologist in Information Systems and Software Development</strong>, with a background as a Programming Technician.",
+            p2: "I build web applications end-to-end as a <strong class=\"text-yellow-300\">Full Stack Developer</strong>, from modern interfaces with <strong class=\"text-white\">JavaScript, Vue.js, React, and Astro</strong>, to REST APIs and databases with <strong class=\"text-white\">Node.js, Express.js, and MySQL</strong>.",
+            p3: "I'm currently expanding into <strong class=\"text-yellow-300\">data analysis</strong>, working with <strong class=\"text-white\">Python, SQL, Excel, and Power BI</strong> to turn data into useful information for decision-making.",
             location: "Cali, Colombia",
             degree: "Systems Tech (Finishing)"
         },
         projects: {
             title: "Projects",
             miaow: {
-                description: "Simulated Full-Stack e-commerce. Includes SQL inventory management, pricing logic, and an interactive \"PC Builder\". Demonstrates ability to handle complex data flow.",
-                role: "I developed the entire project as Full Stack Developer: interface creation, frontend logic, backend and API design, MySQL connection, data handling, and complete production deployment."
+                description: "Full Stack PC hardware sales platform with an interactive PC Builder, dynamic filter catalog, database inventory management, and WhatsApp quote flow.",
+                role: "Built the entire project end-to-end: interfaces, frontend logic, REST APIs with Node.js and Express.js, MySQL database, async contact form, with backend deployed on Railway and frontend on Vercel."
             },
             aqua: {
-                description: "Web system for restaurant order management, with order creation and administration, table handling and payment process.",
-                role: "My contribution focused on the design and implementation of the main interfaces (login, orders and payment), creation of reusable components, responsive design, light/dark mode and frontend integration with backend APIs."
+                description: "Web-based restaurant order management system with order creation and administration, table management, and payment processing.",
+                role: "Focused on designing and implementing the main interfaces (login, orders, and payment), building reusable components, responsive design, light/dark mode, and frontend integration with backend APIs."
             },
             netagora: {
-                description: "Corporate web platform for a software agency, focused on showcasing custom development services and attracting international clients.",
-                role: "I participated as Frontend Developer in the end-to-end creation of Netagora: responsive UI with Tailwind and CSS animations, Astro component architecture to ensure 0kb of unnecessary JavaScript, and advanced technical SEO with Schema.org JSON-LD, Open Graph and dynamic meta tags."
+                description: "Corporate landing page for a software agency with a bilingual i18n system (ES/EN), advanced technical SEO, and responsive UI with custom animations.",
+                role: "Developed the full platform as Frontend Developer: responsive UI with Tailwind, Astro component architecture for 0kb of unnecessary JavaScript, and technical SEO with Schema.org JSON-LD, Open Graph, hreflang, and dynamic meta tags."
             },
             viewCode: "View Code",
             viewDemo: "Live Demo"
@@ -108,14 +109,15 @@ const translations = {
             programming: "Programming Technician",
             certifications: "Certifications",
             bootcamp: "Full Stack Web Development Bootcamp",
-            pythonIntro: "Python Essentials 1"
+            pythonIntro: "Python Essentials 1",
+            googleAI: "Google AI Professional Certificate"
         },
         footer: { rights: "All rights reserved." }
     }
 };
 ---
 
-<Layout title="Johan Lucumi | Frontend & Data Analytics">
+<Layout title="Johan Lucumi | Full Stack & Data Analytics">
   
     <div class="fixed inset-0 -z-10 h-full w-full bg-[#050505] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[24px_24px]">
       <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-yellow-400 opacity-20 blur-[100px]"></div>
@@ -179,7 +181,7 @@ const translations = {
         </h1>
         
         <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-            <span data-i18n="hero.description">Tecnólogo en Desarrollo de Sistemas y Software en formación Desarrollo web · Analisis de Datos  · Automatizacion </span>
+            <span data-i18n="hero.description" data-i18n-html>Tecnólogo en Desarrollo de Sistemas y Software en formación Desarrador Frontend & Analista de Datos  </span>
         </p>
         <div class="flex flex-col md:flex-row gap-4 items-center">
             <a href="https://www.linkedin.com/in/johanlucumi" target="_blank" class="group px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-yellow-300 transition-all duration-300 flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(253,224,71,0.4)] hover:-translate-y-1">
@@ -385,7 +387,7 @@ const translations = {
 
                     <a href="https://coursera.org/verify/specialization/KZE9RS8IJVWW" target="_blank" rel="noopener noreferrer" class="p-5 rounded-xl bg-linear-to-r from-white/5 to-transparent border border-white/5 flex justify-between items-center group hover:border-yellow-400/30 hover:bg-white/10 transition cursor-pointer">
                         <div>
-                            <h4 class="font-bold text-white group-hover:text-yellow-300 transition">Google AI</h4>
+                            <h4 class="font-bold text-white group-hover:text-yellow-300 transition" data-i18n="education.googleAI">Google AI</h4>
                             <p class="text-xs text-gray-500 mt-1">Google / Coursera</p>
                         </div>
                         <div class="w-10 h-10 rounded-full bg-yellow-400/10 flex items-center justify-center group-hover:bg-yellow-400 group-hover:text-black transition duration-300">
