@@ -60,6 +60,10 @@ const translations = {
                 description: "Landing page corporativa para una agencia de software, con sistema i18n bilingüe (ES/EN), SEO técnico avanzado y UI responsive con animaciones personalizadas.",
                 role: "Desarrollé la plataforma completa como Frontend Developer: UI responsive con Tailwind, arquitectura de componentes con Astro para 0kb de JavaScript innecesario, SEO técnico con Schema.org JSON-LD, Open Graph, hreflang y metaetiquetas dinámicas."
             },
+            finanzas: {
+                description: "Proyecto de análisis de datos end-to-end basado en un dataset de finanzas personales de Kaggle con errores intencionales: fechas en múltiples formatos, categorías con typos y valores corruptos, simulando datos reales de producción.",
+                role: "Desempeñé el rol de analista de datos: limpié y transformé el dataset con Python y pandas, diseñé el esquema de base de datos y escribí queries de análisis en MySQL, y construí un dashboard interactivo en Power BI conectado directamente a la base de datos."
+            },
             viewCode: "Ver Código",
             viewDemo: "Ver Demo"
         },
@@ -101,6 +105,10 @@ const translations = {
             netagora: {
                 description: "Corporate landing page for a software agency with a bilingual i18n system (ES/EN), advanced technical SEO, and responsive UI with custom animations.",
                 role: "Developed the full platform as Frontend Developer: responsive UI with Tailwind, Astro component architecture for 0kb of unnecessary JavaScript, and technical SEO with Schema.org JSON-LD, Open Graph, hreflang, and dynamic meta tags."
+            },
+            finanzas: {
+                description: "End-to-end data analysis project based on an intentionally dirty personal finance dataset from Kaggle: dates in multiple formats, categories with typos, and corrupt values — simulating real production data.",
+                role: "Took on the data analyst role: cleaned and transformed the dataset using Python and pandas, designed the database schema and wrote analysis queries in MySQL, and built an interactive Power BI dashboard connected directly to the database."
             },
             viewCode: "View Code",
             viewDemo: "Live Demo"
@@ -273,7 +281,7 @@ const translations = {
                 </div>
             </article>
 
-                        <article class="group relative rounded-2xl border border-white/10 bg-[#0f0f0f] overflow-hidden hover:border-yellow-400/30 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)] transition duration-500">
+            <article class="group relative rounded-2xl border border-white/10 bg-[#0f0f0f] overflow-hidden hover:border-yellow-400/30 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)] transition duration-500">
                 <div class="h-56 overflow-hidden relative">
                     <div class="absolute inset-0 bg-linear-to-t from-[#0f0f0f] to-transparent z-10 opacity-80"></div>
                     <img src="/netagora_landing.jpg" alt="Netagora" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
@@ -322,6 +330,32 @@ const translations = {
                     <a href="https://github.com/LilCharchar/Aqua" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 hover:text-yellow-300 transition">
                         <Github size={16} /> <span data-i18n="projects.viewCode">Ver Código</span>
                     </a>
+                </div>
+            </article>
+
+                        <article class="group relative rounded-2xl border border-white/10 bg-[#0f0f0f] overflow-hidden hover:border-yellow-400/30 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)] transition duration-500">
+                <div class="h-56 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-linear-to-t from-[#0f0f0f] to-transparent z-10 opacity-80"></div>
+                    <img src="/dashboard.png" alt="Netagora" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                </div>
+
+                <div class="p-8 relative z-20 -mt-12">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-yellow-300 transition">Finance Analysis</h3>
+                        <div class="flex gap-2 bg-black/50 backdrop-blur-md p-2 rounded-lg border border-white/10">
+                            <img src="https://skillicons.dev/icons?i=mysql,python" class="h-5" alt="Techs" />
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+                        <span data-i18n="projects.finanzas.description">Plataforma web corporativa para una agencia de software, enfocada en mostrar servicios de desarrollo a medida y captar clientes internacionales.</span>
+                        <br/><br/>
+                        <span data-i18n="projects.finanzas.role">Participé como Desarrollador Web en la creación integral de Netagora: UI responsive con Tailwind y animaciones CSS, arquitectura de componentes con Astro para 0kb de JavaScript innecesario, e implementación de SEO técnico avanzado con Schema.org JSON-LD, Open Graph y metaetiquetas dinámicas.</span>
+                    </p>
+                    <div class="flex gap-3 flex-wrap">
+                        <a href="https://github.com/iamjohitan/personal-finance-analysis" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 hover:text-yellow-300 transition">
+                            <Github size={16} /> <span data-i18n="projects.viewCode">Ver Código</span>
+                        </a>
+                    </div>
                 </div>
             </article>
 
