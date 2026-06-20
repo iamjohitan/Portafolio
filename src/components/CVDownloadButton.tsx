@@ -27,8 +27,8 @@ export default function CVDownloadButton() {
   const updateCVUrl = (lang: "es" | "en") => {
     const url =
       lang === "es"
-        ? "/CV_Johan_Lucumi_Web_ES.pdf"
-        : "/CV_Johan_Lucumi_Web_EN.pdf";
+        ? "/CV_Johan_Lucumi_ES.pdf"
+        : "/CV_Johan_Lucumi_EN.pdf";
     setCvUrl(url);
   };
 
